@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Timeline</title>
+    <meta name="description" content="An experiemntal 3D layout technique for HTML elements." />
+    <meta name="keywords" content="3d, layout, html, css, bending, javascript, demo" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="https://use.typekit.net/grh5akv.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css" />
+    <link rel="stylesheet" type="text/css" href="css/follow.css" />
+    <script>
+    document.documentElement.className = "js";
+    var supportsCssVars = function() {
+        var e,
+            t = document.createElement("style");
+        return (
+            (t.innerHTML = "root: { --tmp-var: bold; }"),
+            document.head.appendChild(t),
+            (e = !!(
+                window.CSS &&
+                window.CSS.supports &&
+                window.CSS.supports("font-weight", "var(--tmp-var)")
+            )),
+            t.parentNode.removeChild(t),
+            e
+        );
+    };
+    supportsCssVars() ||
+        alert(
+            "Please view this demo in a modern browser that supports CSS Variables."
+        );
+    </script>
+</head>
+
+<body class="demo-4 loading">
+    <main>
+        <div class="message">Some message for mobile (if needed).</div>
+        <div class="frame">
+            <h1 class="frame__title">Better Allyship</h1>
+            <div class="frame__links">
+                <a href=""></a>
+                <a href="menu.html">MENU</a>
+                <a href="index.html">HOME</a>
+            </div>
+            <div class="frame__demos">
+                <a href="index.html" class="frame__demo"></a>
+                <a href="index2.html" class="frame__demo"></a>
+                <a href="index3.html" class="frame__demo"></a>
+                <a href="index4.html" class="frame__demo frame__demo--current"></a>
+                <a href="index5.html" class="frame__demo"></a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="fold-content" id="base-content">
+                <!-- CONTENT INSIDE HERE -->
+                <h2 class="content__headline">TIMES ARE CHANGING</h2>
+                <p class="content__type">
+                    
+                </p>
+                <img class="content__img" src="imgs/wmn.jpg" alt="Some image" />
+                <h2 class="content__headline">1970s</h2>
+                <p class="content__type">
+                    Hey! This is a very rough draft of a scrollable timeline. I know I had a different plan to work with horizontal panels originally but I wanted to get creative with this concept considering I had just learned about working with perspective motion. Let me know what you think! I eat feedback for lunch.
+                </p>
+                <img class="content__img" src="imgs/women.jpg" alt="Some image" />
+                <h2 class="content__headline">1980s</h2>
+                <p class="content__type">
+                    Pro tip! You can move the cursor around and side to side to change the timeline's perspective. At some point I'll add in a freeze frame and make the images clickable. That way, users can get more information through text expansion. 
+                </p>
+                <img class="content__img" src="imgs/donna.jpg" alt="Some image" />
+                <h2 class="content__headline">1990s</h2>
+                <p class="content__type">
+                    I'm listening to french rap music right now. They like to complain about the economy a lot which is weird to me because I thought things were doing pretty good over there money wise. I wouldn't know, I'm not a big fan of France. Judging by their racial tensions, I don't think they're a big fan of me either.
+                </p>
+                <img class="content__img" src="imgs/90s.jpg" alt="Some image" />
+                <h2 class="content__headline">2000s</h2>
+                <p class="content__type">
+                    You've reached the end! Hope this was a fun experience. I get a lil dizzy when I stare at this page for too long.
+                </p>
+            </div>
+            <div class="screen">
+                <div class="folds" id="folds">
+                    <div class="fold fold-center" id="fold-center"></div>
+                    <div class="fold-3d fold-3d-top top-wrapper">
+                        <div class="fold fold-top" id="fold-top"></div>
+                    </div>
+                    <div class="fold-3d fold-3d-bottom bottom-wrapper">
+                        <div class="fold fold-bottom" id="fold-bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn-debug" id="btn-debug">See Planes</button>
+        </div>
+    </main>
+    <script src="./js/imagesloaded.pkgd.min.js"></script>
+    <script src="./js/follow.js"></script>
+</body>
+
+</html>
